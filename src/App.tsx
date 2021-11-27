@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import './App.css';
 import {RatingValueType} from "./components/Rating.tsx/Rating";
 import {
-    ControlledInputWithFixedValue,
+    ControlledCheckbox,
+    ControlledInput,
+    ControlledInputWithFixedValue, ControlledSelect,
     GetValueOfUncontrolledInputByButtonPress,
     TrackValueOfUncontrolledInput
 } from "./components/Input";
@@ -23,6 +25,9 @@ function App() {
             <TrackValueOfUncontrolledInput/>
             <ControlledInputWithFixedValue/>
             <GetValueOfUncontrolledInputByButtonPress/>
+            <ControlledInput/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
         </div>
     );
 }
