@@ -8,12 +8,15 @@ import {
     GetValueOfUncontrolledInputByButtonPress,
     TrackValueOfUncontrolledInput
 } from "./components/Input";
+import Accordion from "./components/Accordion/Accordion";
 
 
 function App() {
 
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
+   /* let [ratingValue, setRatingValue] = useState<RatingValueType>(4)*/
+/*    const [value, setValue] = useState('')*/
+    const onClick=()=>{alert('hello')}
     return (
         <div className={'App'}>
             {/*   <OnOff/>
@@ -21,13 +24,16 @@ function App() {
 
             {/*<Rating value={ratingValue} onClick ={setRatingValue}/>
             <UncontrolledRating/>*/}
-
+            {/*
             <TrackValueOfUncontrolledInput/>
             <ControlledInputWithFixedValue/>
             <GetValueOfUncontrolledInputByButtonPress/>
             <ControlledInput/>
             <ControlledCheckbox/>
-            <ControlledSelect/>
+            <ControlledSelect/>*/}
+            <Accordion items={[{title: 'return', value: 1}, {title: 'delete', value: 2},
+                {title: 'on',value: 3}, {title: 'off', value: 4}]}
+                       titleValue={'menu'} collapsed={true} onClick={onClick}/>
         </div>
     );
 }
