@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 import {RatingValueType} from "./components/Rating.tsx/Rating";
-import {ControlledInputWithFixedValue, TrackValueOfUncontrolledInput} from "./components/Input";
+import {
+    ControlledInputWithFixedValue,
+    GetValueOfUncontrolledInputByButtonPress,
+    TrackValueOfUncontrolledInput
+} from "./components/Input";
 
 
 function App() {
@@ -18,6 +22,7 @@ function App() {
 
             <TrackValueOfUncontrolledInput/>
             <ControlledInputWithFixedValue/>
+            <GetValueOfUncontrolledInputByButtonPress/>
         </div>
     );
 }
