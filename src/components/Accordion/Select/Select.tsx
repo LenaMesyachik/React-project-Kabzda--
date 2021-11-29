@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent, useEffect} from 'react';
 import styles from './Select.module.css'
 
 type ItemType = {
@@ -20,29 +20,46 @@ export const Select = (props: SelectPropsType) => {
     const onItemClick = (value: any) => {
         props.onChange(value)
         toggleItem()
-
     }
-    return (
-        <div>
-            {/* <select>
+    useEffect(() => {
+        setHoveredElementValue(props.value)
+    }, [props.value ])
+
+const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
+    for (let i = 0; i < props.items.length; i++) {
+        if (props.items[i].value === hoveredElementValue) {
+
+            if (props.items[i + 1]) {
+                props.onChange(props.items[i + 1].value)
+
+
+                break
+            }
+        }
+    }
+}
+
+return (
+    <div>
+        {/* <select>
                 <option value=''>Minsk</option>
                 <option value=''>Moscow</option>
                 <option value=''>London</option>
             </select>*/}
-            <div className={styles.select}>
-                <span className={styles.main} onClick={toggleItem}>{selectedItem && selectedItem.title}</span>
-                {active &&
-                <div className={styles.items}>
-                    {props.items.map(i => <div className={styles.items + '' + (selectedItem === i ? styles.select : "")}
-                                               key={i.value}
-                                               onMouseEnter={() => {
-                                                   setHoveredElementValue(i.value)
-                                               }}
-                                               onClick={() => onItemClick(i.value)}>{i.title}</div>)}
-                </div>}
-            </div>
+        <div className={styles.select} onKeyPress={onKeyUp} tabIndex={0}>
+            <span className={styles.main} onClick={toggleItem}>{selectedItem && selectedItem.title}</span>
+            {active &&
+            <div className={styles.items}>
+                {props.items.map(i => <div className={styles.items + '' + (selectedItem === i ? styles.select : "")}
+                                           key={i.value}
+                                           onMouseEnter={() => {
+                                               setHoveredElementValue(i.value)
+                                           }}
+                                           onClick={() => onItemClick(i.value)}>{i.title}</div>)}
+            </div>}
         </div>
-    )
+    </div>
+)
 }
 
 export const Select1Base = () => {
