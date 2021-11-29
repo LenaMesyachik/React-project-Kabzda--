@@ -9,6 +9,8 @@ import {
     TrackValueOfUncontrolledInput
 } from "./components/Input";
 import Accordion from "./components/Accordion/Accordion";
+import {Select, Select1Base, Select2Base, Select3Base} from "./components/Accordion/Select/Select";
+
 
 
 function App() {
@@ -31,9 +33,18 @@ function App() {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>*/}
-            <Accordion items={[{title: 'return', value: 1}, {title: 'delete', value: 2},
+           {/* <Accordion items={[{title: 'return', value: 1}, {title: 'delete', value: 2},
                 {title: 'on',value: 3}, {title: 'off', value: 4}]}
-                       titleValue={'menu'} collapsed={true} onClick={onClick}/>
+                       titleValue={'menu'} collapsed={true} onClick={onClick}/>*/}
+            <Select value={5} onChange={() => {
+            }} items={[{value: '1', title: 'Minsk'},
+                {value: '2', title: 'Moscow'},
+                {value: '3', title: 'Kiev'}]}/>
+            <div>
+            <Select1Base/>
+            </div>
+           {/* <Select2Base/>
+            <Select3Base/>*/}
         </div>
     );
 }
