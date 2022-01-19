@@ -10,6 +10,3 @@ export const DigitalView: React.FC<ClockViewType> = ({date}) => {
         <span>{get2digitsString(date.getSeconds())}</span>
     </>
 }
-export const AnalogView: React.FC<ClockViewType> = ({date}) => {
-    return <>ANALOG</>
-}
