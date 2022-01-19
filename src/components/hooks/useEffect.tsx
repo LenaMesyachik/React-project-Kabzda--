@@ -12,17 +12,16 @@ export const UseEffect = () => {
      }, [counter])
  */
     useEffect(() => {
-            setTimeout(() => {
-                debugger
-                console.log('setTimeout')
-                document.title = counter.toString()
+            setInterval(() => {
+                console.log('tick:' + counter)
+                setCounter((state) => state + 1 )
             }, 1000)
         }
-        , )
+        ,[] )
 
     return <>
-        hello {counter} {fake}
-        <button onClick={() => setFake(fake + 1)}>fake+</button>
-        <button onClick={() => setCounter(counter + 1)}>counter+</button>
+        hello counter:{counter} - fake:{fake}
+      {/*  <button onClick={() => setFake(fake + 1)}>fake+</button>
+        <button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
     </>
 }
