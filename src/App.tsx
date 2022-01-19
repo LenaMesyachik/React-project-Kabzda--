@@ -1,17 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import {RatingValueType} from "./components/Rating.tsx/Rating";
-import {
-    ControlledCheckbox,
-    ControlledInput,
-    ControlledInputWithFixedValue, ControlledSelect,
-    GetValueOfUncontrolledInputByButtonPress,
-    TrackValueOfUncontrolledInput
-} from "./components/Input";
-import Accordion from "./components/Accordion/Accordion";
-import {Select, Select1Base, Select2Base, Select3Base} from "./components/Accordion/Select/Select";
-import {UncontrolledAccordion} from "./components/Accordion/UnControledAccordion";
 import {UseEffect} from "./components/hooks/useEffect";
+import {Clock} from "./Clock";
 
 
 function App() {
@@ -25,7 +15,9 @@ function App() {
     return (
         <div className={'App'}>
 
-            <UseEffect/>
+         {/*   <UseEffect/>*/}
+<Clock mode={ 'analog'}/>
+<Clock mode={ 'digital'}/>
 
 
 
