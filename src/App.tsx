@@ -11,6 +11,7 @@ import {
 import Accordion from "./components/Accordion/Accordion";
 import {Select, Select1Base, Select2Base, Select3Base} from "./components/Accordion/Select/Select";
 import {UncontrolledAccordion} from "./components/Accordion/UnControledAccordion";
+import {UseEffect} from "./components/hooks/useEffect";
 
 
 function App() {
@@ -23,9 +24,18 @@ function App() {
     }
     return (
         <div className={'App'}>
+
+            <UseEffect/>
+
+
+
+
             {/*   <OnOff/>
 */}
-            <UncontrolledAccordion titleValue={'menu'}/>
+
+
+
+           {/* <UncontrolledAccordion titleValue={'menu'}/>*/}
             {/*<Rating value={ratingValue} onClick ={setRatingValue}/>
             <UncontrolledRating/>*/}
             {/*
