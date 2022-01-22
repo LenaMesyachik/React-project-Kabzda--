@@ -4,11 +4,15 @@ import {useEffect, useState} from "react";
 export const ResetUseEffect = () => {
     const [counter, setCounter] = useState(1)
 
-    console.log('Component rendered')
+    console.log('Component rendered with ' + counter)
 
     useEffect(() => {
-        console.log('Effect occurred')
-    } ,[] )
+        console.log('Effect occurred with ' + counter)
+
+        return () => {
+            console.log('ResetEffect with ' + counter)
+        }
+    } ,[counter] )
 
 
 const increase = () => {
