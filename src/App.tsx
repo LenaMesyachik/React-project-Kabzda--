@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import {UseEffect} from "./components/hooks/useEffect";
-import {Clock} from "./Clock";
+import {ResetUseEffect} from "./components/hooks/resetUseEffect";
 
 
 function App() {
@@ -16,10 +15,12 @@ function App() {
         <div className={'App'}>
 
          {/*   <UseEffect/>*/}
+{/*
 <Clock mode={ 'analog'}/>
 <Clock mode={ 'digital'}/>
+*/}
 
-
+<ResetUseEffect/>
 
 
             {/*   <OnOff/>
